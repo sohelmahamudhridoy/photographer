@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .home { --back-color: rgb(255, 73, 73); }
+  .about { --back-color: rgb(129, 203, 255); }
+  .contact { --back-color: rgb(34, 255, 60); }
+  .prajwal { --back-color: rgb(255, 174, 81); }
+  .help { --back-color: rgb(237, 255, 45); }
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.3s;
+  }
+
+  .hamburger div {
+    width: 100%;
+    height: 4px;
+    background: #333;
+    margin: 8px 0;
+    transition: 0.3s;
+  }
+
+  .hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(9px, 9px);
+  }
+
+  .hamburger.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(9px, -9px);
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: 0.5s;
+  }
+
+  nav.active {
+    transform: translateY(0);
+  }
+
+  nav a {
+    cursor: pointer;
+    text-decoration: none;
+    margin: 10px 0;
+  }
+
+  nav a span {
+    color: #333;
+    text-decoration: none;
+    font-size: 3em;
+    padding: 5px 20px;
+    display: inline-flex;
+    font-weight: 700;
+    transition: .5s;
+  }
+
+  nav:hover a span {
+    color: rgba(0, 0, 0, 0.345);
+  }
+
+  nav a:hover span {
+    color: #000;
+    /* background: rgba(255, 255, 255, 1); */
+  }
+
+  nav a span::before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    opacity: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 200px;
+    transition: letter-spacing 1.5s, ease .75s;
+  }
+
+  nav a span:hover::before {
+    content: attr(data);
+    opacity: 1;
+    left: 50%;
+    letter-spacing: 10px;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  nav a span:before {
+    background: var(--back-color);
+  }
+
+  #home {
+    height: 120vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./Fotos/self_portrait\ \(3\).jpg');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--secondary);
+}
+
+.text{
+    position: relative;
+    margin-top: 20rem;
+
+}
+
+.text p{
+    font-size: 1.8rem;
+}
+
+.text h2{
+    margin-bottom: 2rem;
+    font-size: 3.4rem;
+}
+
+
+.contact-btn{
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.contact-btn:hover{
+    background: var(--secondary);
+    color: var(--primary);
+}  
+
+@media (max-width: 768px) {
+  .menu-container {
+      padding: 6px 10px;
+  }
+
+  .menu-text {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+  }
+
+  .hamburger {
+      padding: 4px;
+  }
+
+  .hamburger span {
+      width: 30px;
+      height: 2px;
+      margin: 3px 0;
+  }
+
+  .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(4px, 4px);
+  }
+    
+  .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(4px, -4px);
+  }
+
+  .nav-links ul {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .nav-links li a {
+      font-size: calc(2vw + 36px);
+  }
+
+  .nav-social-links {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
+  }
+
+  .social-link {
+      font-size: calc(1vw + 18px);
+      padding: 0.8rem;
+  }
+
+}

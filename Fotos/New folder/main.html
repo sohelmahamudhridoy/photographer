@@ -1,0 +1,374 @@
+<html><head><base href="/" />
+    <style>
+    :root {
+        --theme: #E94D35;
+        --theme2: #ffffff;
+        --secondary: #F39C12;
+        --gray: #1a1a1a;
+        --lightest-gray: #f8f8f8;
+        --transition--length: 0.8s;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+        font-family: 'Fira Sans', sans-serif;
+        background: #222;
+        min-height: 200vh;
+    }
+
+        .nav-overlay {
+        content: "";
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 0%;
+        height: 0%;
+        background: linear-gradient(-140deg, rgb(255, 0, 0), rgb(255, 145, 0) , rgb(255, 251, 0), rgba(0, 0, 0, 0));
+        transition: clip-path 0.4s ease-in-out;
+        clip-path: circle(0% at 100% 0);
+        z-index: -99;
+        }
+
+        body.activeNav .nav-overlay {
+            width: 100%;
+            height: 100vh;
+            clip-path: circle(160% at 100% 0);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            justify-content: flex-end;
+            transition: all 0.5s ease;
+            z-index: 1000;
+        }
+
+        .menu-container {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 4px 10px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled .menu-container {
+            background: #22222233;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-text {
+            color: var(--secondary);
+            font-size: 1rem;
+            font-weight: 500;
+            display: block;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            border-radius: 25px;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled .menu-text{
+            background-color: var(--theme2);
+        }
+
+        .hamburger {
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+            z-index: 100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--theme2);
+            margin: 5px 0;
+            transition: 0.5s;
+        }
+
+        .hamburger.active span:nth-child(1) { 
+            transform: rotate(45deg) translate(4px, 8px); 
+        }
+        .hamburger.active span:nth-child(2) { 
+            opacity: 0; 
+        }
+        .hamburger.active span:nth-child(3) { 
+            transform: rotate(-45deg) translate(4px, -8px); 
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 100%;
+            background: var(--gray);
+            transition: clip-path 0.8s ease-in-out;
+            clip-path: circle(0% at calc(100% - 80px) 50px);
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-links::before {
+            content: attr(data-background);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20vw;
+            font-weight: 700;
+            color: rgba(95, 95, 95, 0.2);
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            letter-spacing: 200px;
+            transition: letter-spacing 1.5s, ease .75s;
+        }
+
+        .nav-links.active::before {
+            opacity: 1;
+            letter-spacing: 10px;
+        }
+
+        .nav-links ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            gap: 2rem;
+            padding: 0;
+        }
+
+        .nav-links.active {
+            clip-path: circle(160% at calc(100% - 80px) 50px);
+            pointer-events: all;
+        }
+
+        .nav-links li {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity .3s ease, transform .3s ease;
+        }
+
+        .nav-links.active li {
+            opacity: 0;
+        }
+
+        .nav-links.active li a {
+            opacity: 0;
+        }
+
+        .nav-links.active ul li:nth-child(1) {
+            transition-delay: 0.4s;
+        }
+
+        .nav-links.active ul li:nth-child(2) {
+            transition-delay: 0.5s;
+        }
+
+        .nav-links.active ul li:nth-child(3) {
+            transition-delay: 0.6s;
+        }
+
+        .nav-links.active ul li:nth-child(4) {
+            transition-delay: 0.7s;
+        }
+
+        .nav-social-links a {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .3s ease, transform .3s ease;
+        }
+
+        .nav-links.active .nav-social-links a:nth-child(1) {
+            transition-delay: 0.8s;
+        }
+
+        .nav-links.active .nav-social-links a:nth-child(2) {
+            transition-delay: 0.9s;
+        }
+
+        .nav-links.active li,
+        .nav-links.active li a,
+        .nav-links.active .nav-social-links a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-links li a {
+            color: var(--lightest-gray);
+            text-decoration: none;
+            font-size: calc(2vw + 30px);
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-links li a.active {
+            color: var(--theme2);
+        }
+
+        .nav-social-links {
+            position: relative;
+            z-index: 2;
+            margin-top: 4rem;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .social-link {
+            color: var(--lightest-gray);
+            text-decoration: none;
+            font-size: calc(1vw + 10px);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--secondary);
+        }
+
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover svg {
+            transform: translate(2px, -2px);
+        }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="menu-container">
+                <span class="menu-text">MENU</span>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="nav-overlay"></div>
+            <div class="nav-links" data-background-text="">
+                <ul>
+                    <li><a href="#home" class="active home"><span data="home">Home</span></a></li>
+                    <li><a href="#portfolio" class="portfolio"><span data="portfolio">Portfolio</span></a></li>
+                    <li><a href="#about" class="about"><span data="about">About</span></a></li>
+                    <li><a href="#contact" class="contact"><span data="contact">Contact</span></a></li>
+                </ul>
+                <div class="nav-social-links">
+                    <a href="https://facebook.com/sohelmahamudhridoyphotographer" target="_blank" class="social-link">
+                        Facebook
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/1862216351" target="_blank" class="social-link">
+                        Whatsapp
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    
+        <section id="home" style="height: 100vh; background: #333;"></section>
+        <section id="portfolio" style="height: 100vh; background: #444;"></section>
+        <section id="about" style="height: 100vh; background: #555;"></section>
+        <section id="contact" style="height: 100vh; background: #666;"></section>
+    
+    <script>
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const hamburger = document.querySelector('.hamburger');
+    const menuText = document.querySelector('.menu-text');
+    const navMenu = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-links li');
+    
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 400) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= sectionTop - sectionHeight/3) {
+                current = section.getAttribute('id');
+            }
+        });
+    
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+                navMenu.setAttribute('data-background', link.querySelector('span').textContent.toUpperCase());
+            }
+        });
+    });
+    
+    function toggleMenu() {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        menuText.textContent = navMenu.classList.contains('active') ? 'CLOSE' : 'MENU';
+        
+        links.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `fadeIn 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+    }
+    
+    navLinks.forEach(link => {
+        link.addEventListener('mouseover', () => {
+            navMenu.setAttribute('data-background', link.querySelector('span').textContent.toUpperCase());
+        });
+        
+        link.addEventListener('click', () => {
+            toggleMenu();
+        });
+    });
+    
+    hamburger.addEventListener('click', toggleMenu);
+    menuText.addEventListener('click', toggleMenu);
+    
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && 
+            !hamburger.contains(e.target) && 
+            !menuText.contains(e.target) && 
+            navMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+    </script>
+    </body>
+    </html>

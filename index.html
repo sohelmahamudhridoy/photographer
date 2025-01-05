@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Sohel Clicker">
+        <meta name="author" content="Sohel Mahamud Hridoy">
+        <meta http-equiv= "X-UA-Compatible" content= IE=edge>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sohel Clicker</title>
+
+        <!-- Favicon -->
+        <link rel="icon" href="./Fotos/favicon.png" type="image/png">
+
+
+        <!-- Font-Family -->
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+        
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        <!-- AOS CSS -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+        <!-- Fancybox CSS -->
+        <link rel="stylesheet" type="text/css" href="jquery.fancybox.css">
+
+        <!-- Swiper Js -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        
+    <!-- Lading_Page -->
+
+        <div class="loading-screen">
+            <div class="greeting-container" id="greetingContainer"></div>
+        </div>
+
+    <!-- Navigation -->
+     
+    <nav class="navbar">
+        <div class="menu-container">
+            <span class="menu-text">MENU</span>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="nav-overlay"></div>
+        <div class="nav-links" data-background-text="">
+            <ul>
+                <li><a href="#home" class="active home"><span data="home">Home</span></a></li>
+                <li><a href="#portfolio" class="portfolio"><span data="portfolio">Portfolio</span></a></li>
+                <li><a href="#about" class="about"><span data="about">About</span></a></li>
+                <li><a href="#contact" class="contact"><span data="contact">Contact</span></a></li>
+            </ul>
+            <div class="nav-social-links">
+                <a href="https://facebook.com/sohelmahamudhridoyphotographer" target="_blank" class="social-link">
+                    Facebook
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                </a>
+                <a href="https://wa.me/1862216351" target="_blank" class="social-link">
+                    Whatsapp
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+        <!-- Progress-Bar -->
+
+        <div class="progress-bar">
+           <div class="filled"></div>
+        </div>
+
+        <!-- Home Section -->
+
+        <section id="home">
+            <div class="container">
+                <div class="text">
+                    <p  data-aos="fade-up">“When people ask me what equipment I use – I tell them my eyes.”</p>
+                    <h2  data-aos="fade-up" data-aos-delay="100">Hello, I'm <span id="typed"></span></h2>
+                    <a href="#contact" class="contact-btn" data-aos="fade-up" data-aos-delay="200">Contact Me</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        
+        <section id="portfolio">
+            <div class="container">
+                <h2 data-aos="fade-down">Portfolio</h2>
+                <p data-aos="fade-up">Capturing moments that last forever</p>
+
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="feature">Feature</button>
+                    <button class="filter-btn" data-filter="portrait">Portrait</button>
+                    <button class="filter-btn" data-filter="wedding">Wedding</button>
+                </div>
+                
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-aos="fade-up" data-category="wedding">
+                        <a href="./Fotos/creative (4).jpg" data-fancybox="gallery">
+                            <img src="./Fotos/creative (4).jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Wedding Sessions</div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-up" data-category="feature">
+                        <a href="./Fotos/HSC2349sc.jpg" data-fancybox="gallery">
+                            <img src="./Fotos/HSC2349sc.jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Feature Photo</div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-up" data-category="wedding">
+                        <a href="./Fotos/creative (3).jpg" data-fancybox="gallery">
+                            <img src="./Fotos/creative (3).jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Wedding Sessions</div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-up" data-category="wedding">
+                        <a href="./Fotos/HRI_2331LR.jpg" data-fancybox="gallery">
+                            <img src="./Fotos/HRI_2331LR.jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Wedding Sessions</div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-up" data-category="portrait">
+                        <a href="./Fotos/HRI_2161SC.jpg" data-fancybox="gallery">
+                            <img src="./Fotos/HRI_2161SC.jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Creative Portrait</div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-up" data-category="wedding">
+                        <a href="./Fotos/Bride (15).jpg" data-fancybox="gallery">
+                            <img src="./Fotos/Bride (15).jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Wedding Sessions</div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-up" data-category="portrait">
+                        <a href="./Fotos/HSC_3936SC.jpg" data-fancybox="gallery">
+                            <img src="./Fotos/HSC_3936SC.jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Creative Portrait</div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-up" data-category="wedding">
+                        <a href="./Fotos/HRI_2775LR.jpg" data-fancybox="gallery">
+                            <img src="./Fotos/HRI_2775LR.jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Creative Portrait</div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-up" data-category="portrait">
+                        <a href="./Fotos/HSC_8399SC.jpg" data-fancybox="gallery">
+                            <img src="./Fotos/HSC_8399SC.jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Creative Portrait</div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-up" data-category="wedding">
+                        <a href="./Fotos/HRI_2359LR.jpg" data-fancybox="gallery">
+                            <img src="./Fotos/HRI_2359LR.jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Wedding Sessions</div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-up" data-category="feature">
+                        <a href="./Fotos/file.jpg" data-fancybox="gallery">
+                            <img src="./Fotos/file.jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Feature Photo</div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-up" data-category="wedding">
+                        <a href="./Fotos/HSC_5344SCps.jpg" data-fancybox="gallery">
+                            <img src="./Fotos/HSC_5344SCps.jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Wedding Sessions</div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-up" data-category="feature">
+                        <a href="./Fotos/self_portrait (5).jpg" data-fancybox="gallery">
+                            <img src="./Fotos/self_portrait (5).jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Feature Photo</div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-up" data-category="wedding">
+                        <a href="./Fotos/HSC_5586SCps.jpg" data-fancybox="gallery">
+                            <img src="./Fotos/HSC_5586SCps.jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Wedding Sessions</div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item" data-aos="fade-up" data-category="portrait">
+                        <a href="./Fotos/HSC_3855sc2.jpg" data-fancybox="gallery">
+                            <img src="./Fotos/HSC_3855sc2.jpg" alt="" class="img-fluid">
+                            <div class="portfolio-overlay">Creative Portrait</div>
+                        </a>
+                    </div>
+                    
+
+                 
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+
+        <section id="about">
+            <div class="container">
+                <h2 data-aos="fade-down">About Me</h2>
+                <div class="row gy-5">
+                    <div class="col-md-4" data-aos="fade-right">
+                        <img src="./Fotos/self_portrait (2).jpg" alt="Professional photographer in maroon shirt" id="aboutphoto" class="img-fluid rounded-3">
+                    </div>
+                    <div class="col-md-8" data-aos="fade-left">
+                        <p>HI! I'm <span class="lead fw-bold" style="text-transform: uppercase; font-size: 1.6rem;"> Sohel Mahamud Hridoy</span>, your go-to wedding and portrait photographer from Jashore, Bangladesh. My passion? Capturing life's most beautiful moments in a way that tells a story. <br> <br>    
+                        From grand wedding celebrations to intimate portrait sessions, and even the raw elegance of street photography, I bring a fresh perspective and technical prowess to each shoot. My journey began with a simple love for photography, and today, I have the privilege of working with amazing clients across Bangladesh.
+                        Let’s create something extraordinary, every photo, a piece of art. 📸✨</p>
+                        <div  class="grid-container">
+                            <a href="#contact"   class="hire">Let's Work Together<div class="shine"></div></a>
+                            <a href="#portfolio" class="view-work">View Work</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Typing Section -->
+
+        <section id="typing">
+            <div class="container">
+                <h1>Know your <span id="typed-two"></span>That you didn’t see before.</h1>
+            </div>
+        </section>
+
+        <!-- Carousel Section -->
+
+        <section class="carousel-main"> 
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="/Fotos/creative (3).jpg" alt="Portrait 1">
+                        <div class="overlay"></div>
+                        <i class="fa-solid fa-heart love-icon"></i>
+                        <i class="fa-solid fa-heart heart-popup"></i>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/Fotos/creative (4).jpg" alt="Portrait 2">
+                        <div class="overlay"></div>
+                        <i class="fa-solid fa-heart love-icon"></i>
+                        <i class="fa-solid fa-heart heart-popup"></i>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/Fotos/self_portrait (2).jpg" alt="Portrait 3">
+                        <div class="overlay"></div>
+                        <i class="fa-solid fa-heart love-icon"></i>
+                        <i class="fa-solid fa-heart heart-popup"></i>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/Fotos/Bride (15).jpg" alt="Portrait 3">
+                        <div class="overlay"></div>
+                        <i class="fa-solid fa-heart love-icon"></i>
+                        <i class="fa-solid fa-heart heart-popup"></i>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/Fotos/file.jpg" alt="Portrait 3">
+                        <div class="overlay"></div>
+                        <i class="fa-solid fa-heart love-icon"></i>
+                        <i class="fa-solid fa-heart heart-popup"></i>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+
+
+        <!-- Contact Section -->
+
+        <section id="contact">
+            <div class="container about-container" >
+                <div class="contact-info">
+                    <h1>Let's Start a Conversation</h1>
+                    
+                    <div class="info-item">
+                        <h3>Email Us</h3>
+                        <p>sohelclicker@gmail.com</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3>Call Us</h3>
+                        <p>+880 186 221 6351</p>
+
+                    </div>
+                    
+                    <div class="info-item">
+                        <h3>Locations</h3>
+                        <p>Vodra, Rajshahi.<br>Jashore, Bangladesh.</p>
+                    </div>
+                    
+                    <div class="social-links d-flex justify-content-evenly">
+                        <a href="https://flickr.com/sohelmahamudhridoyphotographer" target="_blank"><i class="fab fa-flickr"></i></a>
+                        <a href="https://instagram.com/sohelclicker" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/sohelclicker" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/1862216351" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <p class="contact-text">Tell me about your next Project</p>    
+                    <form id="contactForm" action="" method="POST" name="google-sheet" autocomplete="off">
+                        <div class="form-group">
+                            <input type="text" id="name" name="Name" required>
+                            <label for="name">Full Name</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="Email" required>
+                            <label for="email">Email Address</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="subject" name="Phone" pattern="{0}{1}-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9]" required>
+                            <label for="phone">Phone Number</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="Massage" rows="4" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" value="submit" required title="Please Wait" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="" >Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+
+        <footer class="footer">
+            <div class="footer-content">
+                 <!-- Social Icons Section -->
+                <div class="social-icons">
+                    <a href="https://facebook.com/sohelclicker" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/sohelclicker" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.pinterest.com/sohelclicker/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                    <a href="https://linkedin.com/in/sohelclicker/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.flickr.com/photos/sohelmahamudhridoyphotographer" target="_blank"><i class="fab fa-flickr"></i></a>
+                    <a href="https://www.youtube.com/@sohelclicker" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.google.com/search?sca_esv=884896eda14e76c3&sxsrf=ADLYWIJTyn09XBWQMFhd9eckoji0KDpSbw%3A1731689135876&q=Sohel%20Clicker&stick=H4sIAAAAAAAAAONgU1I1qDC2TEszMk60NEpJs7Q0Tja3MqgwNEw1NTQyM7dItUwyNDVLWcTKG5yfkZqj4JyTmZydWgQAjhS0RDkAAAA&mat=CX4TFituM1Er&ved=2ahUKEwidrrje5N6JAxWpTmwGHdwQNOkQrMcEegQIDBAD" target="_blank"><i class="fab fa-google"></i></a>
+                </div>
+                 <!-- Copyright Section -->
+                <div class="copyright">
+                    <p> Copyright &copy; 2024. Website designed and built by <span> Sohel Mahamud Hridoy</span>.</p>
+                </div>
+            </div>
+        </footer> 
+
+    
+
+
+
+
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Typed.js -->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+        <!-- AOS JS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <!-- Fancybox JS -->
+        <script src="jquery.fancybox.js"></script>
+
+        <!-- Swiper JS -->    
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+<!--======================================================= Custom JS =============================================================== -->
+
+
+        <!-- Lading_Page -->
+        <script>
+            const greetings = [
+                { text: "Hello", lang: "en" },
+                { text: "ٱلسَّلَامُ عَلَيْكُمْ", lang: "ar" },
+                { text: "Ciao", lang: "it" },
+                { text: "Olà", lang: "pt" },
+                { text: "やあ", lang: "ja" },
+                { text: "नमस्ते", lang: "hi" },
+                // { text: "Здравствуйте", lang: "ru" },
+                { text: "Hola", lang: "es" },
+                { text: "Bonjour", lang: "fr" },
+            ];
+            
+            const container = document.getElementById('greetingContainer');
+
+            let currentIndex = 0;
+            let timeoutDuration = 500;
+            
+
+            
+            function showGreeting() {
+                if (currentIndex >= greetings.length) {
+                    document.querySelector('.loading-screen').classList.add('hide');
+                    document.getElementById('mainContent').classList.add('show');
+                    return;
+                }
+            
+                const greeting = greetings[currentIndex];
+                const element = document.createElement('div');
+                element.className = 'greeting';
+                element.textContent = greeting.text;
+                element.style.direction = greeting.lang === 'ar' ? 'rtl' : 'ltr';
+                
+                container.innerHTML = '';
+                container.appendChild(element);
+            
+                // Animate in
+                element.animate([
+                    { opacity: 0, transform: 'translateY(20px)' },
+                    { opacity: 1, transform: 'translateY(0)' }
+                ], {
+                    duration: 200,
+                    fill: 'forwards',
+                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                });
+            
+                // Animate out
+                setTimeout(() => {
+                    element.animate([
+                        { opacity: 1, transform: 'translateY(0)' },
+                        { opacity: 0, transform: 'translateY(-20px)' }
+                    ], {
+                        duration: 200,
+                        fill: 'forwards',
+                        easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                    });
+                }, timeoutDuration - 200);
+            
+                currentIndex++;
+                
+                if (currentIndex < greetings.length - 1) {
+                    timeoutDuration = Math.max(300, timeoutDuration - 40);
+                } else if (currentIndex === greetings.length - 1) {
+                    timeoutDuration = 600;
+                }
+                
+                setTimeout(showGreeting, timeoutDuration);
+            }
+            
+                // Start the animation sequence when the page loads
+                window.addEventListener('load', () => {
+                    setTimeout(showGreeting, 200);
+                });
+                
+
+            // navbar starting    
+            document.addEventListener('DOMContentLoaded', () => {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('.nav-links a');
+                const hamburger = document.querySelector('.hamburger');
+                const menuText = document.querySelector('.menu-text');
+                const navMenu = document.querySelector('.nav-links');
+                const links = document.querySelectorAll('.nav-links li');
+                
+                window.addEventListener('scroll', () => {
+                    const navbar = document.querySelector('.navbar');
+                    if (window.scrollY > 400) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+
+                    let current = '';
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight;
+                        if (window.scrollY >= sectionTop - sectionHeight/3) {
+                            current = section.getAttribute('id');
+                        }
+                    });
+
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').includes(current)) {
+                            link.classList.add('active');
+                            navMenu.setAttribute('data-background', link.querySelector('span').textContent.toUpperCase());
+                        }
+                    });
+                });
+                
+                function toggleMenu() {
+                    navMenu.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                    menuText.textContent = navMenu.classList.contains('active') ? 'CLOSE' : 'MENU';
+                    document.body.classList.toggle('activeNav');
+                    
+                    links.forEach((link, index) => {
+                        if (link.style.animation) {
+                            link.style.animation = '';
+                        } else {
+                            link.style.animation = `fadeIn 0.5s ease forwards ${index / 7 + 0.3}s`;
+                        }
+                    });
+                }
+                
+                navLinks.forEach(link => {
+                    link.addEventListener('mouseover', () => {
+                        navMenu.setAttribute('data-background', link.querySelector('span').textContent.toUpperCase());
+                    });
+                    
+                    link.addEventListener('mouseout', () => {
+                        const activeLink = document.querySelector('.nav-links a.active');
+                        if (activeLink) {
+                            navMenu.setAttribute('data-background', activeLink.querySelector('span').textContent.toUpperCase());
+                        }
+                    });
+                    
+                    link.addEventListener('click', () => {
+                        toggleMenu();
+                    });
+                });
+                
+                hamburger.addEventListener('click', toggleMenu);
+                menuText.addEventListener('click', toggleMenu);
+                
+                document.addEventListener('click', (e) => {
+                    if (!navMenu.contains(e.target) && 
+                        !hamburger.contains(e.target) && 
+                        !menuText.contains(e.target) && 
+                        navMenu.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+            
+                
+            // Initialize AOS
+
+            AOS.init({
+                duration: 1000,
+                once: false,
+                offset: 60,
+                easing: 'ease',
+
+            });
+
+            // Typed js
+
+            var typed = new Typed('#typed', {
+                strings: ['a Photographer', 'a Learner', 'an Artist'],
+                typeSpeed: 120,
+                backSpeed: 70,
+                loop: true
+            });
+
+            var typed = new Typed('#typed-two', {
+                strings: ['Value', 'Worth', 'Beauty'],
+                typeSpeed: 150,
+                backSpeed: 70,
+                loop: true,
+                cursorChar: '_',
+            });
+
+
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+
+            // progressBar
+
+            const filled = document.querySelector('.filled');
+
+            function update (){
+                filled.style.width = `${ ( ( window.scrollY ) / (document.body.scrollHeight - window.innerHeight ) *100 ) }%`
+                requestAnimationFrame(update);
+                }
+
+            update();
+
+
+        </script>
+
+        <!-- portfolio filter btn -->
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+
+                        const filterValue = button.dataset.filter;
+
+                        portfolioItems.forEach(item => {
+                            const match = filterValue === 'all' || filterValue === item.dataset.category;
+                            item.style.display = match ? 'block' : 'none';
+                            if (match) {
+                                item.style.opacity = '0';
+                                item.style.transform = 'translateY(20px)';
+                                setTimeout(() => {
+                                    item.style.opacity = '1';
+                                    item.style.transform = 'translateY(0)';
+                                    item.style.transition = 'all 0.4s ease';
+                                }, 50);
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+
+        <!-- Carousel  -->
+
+        <script>
+            const initSwiper = () => {
+                const swiper = new Swiper('.swiper', {
+                    effect: 'coverflow',
+                    grabCursor: true,
+                    centeredSlides: true,
+                    slidesPerView: 'auto',
+                    // direction: "vertical",
+                    loop: true,
+                    mousewheel: false,
+                    autoplay: {
+                        delay: 2000,
+                        disableOnInteraction: false,
+                    },
+                    coverflowEffect: {
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 400,
+                        modifier: 1,
+                        slideShadows: true,
+                    },
+                    pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    // dynamicBullets: true,
+                    }
+
+                });
+
+                return swiper;
+            };
+
+            const setupLoveReactions = () => {
+            const slides = document.querySelectorAll('.swiper-slide');
+            const loveStates = JSON.parse(localStorage.getItem('loveStates')) || {};
+
+            slides.forEach((slide, index) => {
+                const loveIcon = slide.querySelector('.love-icon');
+                const heartPopup = slide.querySelector('.heart-popup');
+                const overlay = slide.querySelector('.overlay');
+
+                // Restore saved states
+                if (loveStates[index]) {
+                    loveIcon.classList.add('active');
+                }
+
+                const handleLove = () => {
+                    if (slide.classList.contains('swiper-slide-active')) {
+                        const isLoved = loveIcon.classList.contains('active');
+                        
+                        if (!isLoved) {
+                            loveIcon.classList.add('active');
+                            heartPopup.classList.add('show');
+                            
+                            // Save state
+                            loveStates[index] = true;
+                            localStorage.setItem('loveStates', JSON.stringify(loveStates));
+
+                            setTimeout(() => {
+                                heartPopup.classList.remove('show');
+                            }, 800);
+                        } else {
+                            loveIcon.classList.remove('active');
+                            loveStates[index] = false;
+                            localStorage.setItem('loveStates', JSON.stringify(loveStates));
+                        }
+                    }
+                };
+
+                overlay.addEventListener('click', handleLove);
+                loveIcon.addEventListener('click', handleLove);
+                });
+            };
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const swiper = initSwiper();
+                setupLoveReactions();
+
+            });
+                
+        </script>
+
+
+
+        <!-- Massage submit button -->
+
+        <script>
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+            })
+        </script>
+
+
+
+        <!-------------------------------- google-sheet-form --------------------->
+
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbx7XVTTyyJxP2gc5LeBqFDqEVzxl_YVLRs7ljNFcrDxIVrexfjnfcsEz9O3rNgtSIg3/exec'
+            const form = document.forms['google-sheet']
+        
+            form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thank you for your feedback. We will contact you soon."))
+                .catch(error => console.error('Error!', error.message))
+            })
+        </script>
+  
+
+
+    </body>
+
+</html>

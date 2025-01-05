@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="description" content="Sohel Clicker">
+      <meta name="author" content="Sohel Mahamud Hridoy">
+      <meta http-equiv= "X-UA-Compatible" content= IE=edge>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Sohel Clicker</title>
+      <link rel="stylesheet" href="style1.css">
+    </head>
+    <body>
+        
+      <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <a href="https://example.com/home" class="home"><span data="home">Home</span></a>
+            <a href="https://example.com/about" class="about"><span data="about">About</span></a>
+            <a href="https://example.com/contact" class="contact"><span data="contact">Contact</span></a>
+        </nav>
+        
+
+        <section id="home">
+          <div class="container">
+              <div class="text">
+                  <p  data-aos="fade-up">“When people ask me what equipment I use – I tell them my eyes.”</p>
+                  <h2  data-aos="fade-up" data-aos-delay="100">Hello, I'm <span id="typed"></span></h2>
+                  <a href="#contact" class="contact-btn" data-aos="fade-up" data-aos-delay="200">Contact Me</a>
+              </div>
+          </div>
+      </section>
+
+
+
+        <script>
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav');
+            
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                });
+            });
+        </script>
+    </body>
+</html>
